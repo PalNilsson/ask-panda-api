@@ -59,6 +59,17 @@ class ClientSelector:
         """
         return list(self._clients.keys())
 
+    def select_client_type(self, query: str) -> str:
+        """Select the appropriate client type for a query.
+
+        Args:
+            query: The query string.
+
+        Returns:
+            The selected client type.
+        """
+        return self._auto_select_client(query)
+
     async def route_query(self, query: str, client_type: str | None = None, **kwargs: Any) -> dict[str, Any]:
         """Route a query to the appropriate client.
 

@@ -46,33 +46,33 @@ class TestClientSelector:
         """Test auto-selection for documentation queries."""
         config = ClientConfig()
         selector = ClientSelector(config)
-        client_type = selector._auto_select_client("How do I use the documentation?")
+        client_type = selector.select_client_type("How do I use the documentation?")
         assert client_type == "docs"
 
     def test_auto_select_logs(self) -> None:
         """Test auto-selection for log queries."""
         config = ClientConfig()
         selector = ClientSelector(config)
-        client_type = selector._auto_select_client("Show me the error logs")
+        client_type = selector.select_client_type("Show me the error logs")
         assert client_type == "logs"
 
     def test_auto_select_data(self) -> None:
         """Test auto-selection for data queries."""
         config = ClientConfig()
         selector = ClientSelector(config)
-        client_type = selector._auto_select_client("Find dataset mc16_13TeV")
+        client_type = selector.select_client_type("Find dataset mc16_13TeV")
         assert client_type == "data"
 
     def test_auto_select_pilots(self) -> None:
         """Test auto-selection for pilot queries."""
         config = ClientConfig()
         selector = ClientSelector(config)
-        client_type = selector._auto_select_client("What is the pilot status?")
+        client_type = selector.select_client_type("What is the pilot status?")
         assert client_type == "pilots"
 
     def test_auto_select_maintenance(self) -> None:
         """Test auto-selection for maintenance queries."""
         config = ClientConfig()
         selector = ClientSelector(config)
-        client_type = selector._auto_select_client("Is there any maintenance scheduled?")
+        client_type = selector.select_client_type("Is there any maintenance scheduled?")
         assert client_type == "maintenance"
