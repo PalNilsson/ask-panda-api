@@ -1,7 +1,6 @@
 """MCP server for documentation search."""
 
 import asyncio
-import os
 from typing import Any
 
 
