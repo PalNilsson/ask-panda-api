@@ -32,7 +32,7 @@ class ClientConfig(BaseModel):
     data_enabled: bool = Field(default=True, description="Enable data client")
     pilots_enabled: bool = Field(default=True, description="Enable pilots client")
     maintenance_enabled: bool = Field(default=True, description="Enable maintenance client")
-    base_url: str | None = Field(default=None, description="Base URL for PanDA services")
+    base_url: str | None = Field(default="http://bigpanda.cern.ch", description="Base URL for PanDA services")
     timeout: int = Field(default=30, gt=0, description="Request timeout in seconds")
 
 
